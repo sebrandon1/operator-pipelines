@@ -128,3 +128,12 @@ oc create secret generic hydra-credentials \
   --from-literal username=<username>  \
   --from-literal password=<password>
 ```
+
+### Only Release pipeline:
+#### IBM webhook token
+The Release pipeline needs to call an IBM webhook to trigger marketplace replication. To
+authenticate with the webhook, a token is needed.
+
+```bash
+oc create secret generic ibm-webhook-token --from-literal ibm-webhook-token=< TOKEN >
+```

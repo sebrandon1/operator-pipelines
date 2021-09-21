@@ -152,4 +152,5 @@ tkn pipeline start operator-release-pipeline \
   --workspace name=github-bot-token,secret=github-bot-token \
   --workspace name=registry-credentials,secret=registry-dockerconfig-secret \
   --workspace name=ocp-registry-kubeconfig,secret=ocp-registry-kubeconfig \
+  --workspace name=ibm-webhook-token,secret=ibm-webhook-token \
   --showlog

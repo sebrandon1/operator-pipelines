@@ -16,6 +16,8 @@ spec:
       description: All known supported OCP indices
     - name: max_version_indices
       description: Latest known supported OCP indice
+    - name: ocp_version
+      description: OCP version for the bundle according to annotations
   workspaces:
     - name: source
   steps:
@@ -49,3 +51,8 @@ spec:
           | jq -r '.max_version_index.path' \
           | tr -d '\n\r' \
           | tee $(results.max_version_indices.path)
+
+        echo $VERSION_INFO \
+          | jq -r '.versions_annotation' \
+          | tr -d '\n\r' \
+          | tee $(results.ocp_version.path)
